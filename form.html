@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Formulario en php (Básico)</title>
+    <link rel="stylesheet" type="text/css" href="form.css">
+  </head>
+  <body>
+        <h1>Formulario para de informació totalmente privada, soy de fiar</h1>
+    <form action="procesador.php" method="post" target="_self">
+      <b>Nom:</b> <input type="text" name="nom" required><br>
+      <b>Correu:</b> <input type="mail" name="correu" required><br>
+      <b>Url:</b> <input type="url" name="url"><br>
+      <b>Data i hora:</b> <input type="datetime-local" name="data_hora"><br>
+      <b>Mes:</b> <input type="month" name="mes"><br>
+      <b>Setmana:</b> <input type="week" name="Setmana"><br>
+      <b>Número</b> <input type="number" name="numero" min="-10" max="10"><br>
+      <b>Telèfon:</b> <input type="tel" name="Telefon"><br>
+      <b>Paraula de recerca:</b> <input type="search" name="cerca"><br>
+      <b>Color favorit:</b><input type="color" id="color" name="color">
+      <input type="submit" value="Procesar" />
+    </form>
+  </body>
+</html>
