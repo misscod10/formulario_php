@@ -57,6 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 	mysqli_query($conn, $sql);
         echo "Form data saved successfully!";
+        header("Refresh: 3; url=login.html");
     }
 }
 

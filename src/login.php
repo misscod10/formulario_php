@@ -25,12 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_num_rows($result) > 0) {
         // Las credenciales son válidas, redirigir a index.html
-        header("Location: index.html");
+        echo "Inicio de sessión correcto, por favor espere";
+        header("Refresh: 3; url=index.html");
         exit();
     } else {
         // Las credenciales son incorrectas, mostrar mensaje y redirigir al formulario
         echo "Credenciales incorrectas, por favor inténtelo de nuevo.";
-        header("Refresh: 5; url=formulario.php");
+        header("Refresh: 5; url=login.html");
         exit();
     }
 }
