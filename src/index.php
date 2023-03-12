@@ -17,7 +17,7 @@
         <p>Bienvenido, <?php echo $nom; ?></p>
         <p><?php echo $correu; ?></p>
       </div>       
-      <h1>Welcome to My Friend Subscription Application</h1>
+      <h1>Welcome to My <br>Friend Subscription Application</h1>
       <nav>
         <ul>
           <li><a href="./index.html">Home</a></li>
