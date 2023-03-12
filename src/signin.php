@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . mysqli_error($conn);
     } else {
 	mysqli_query($conn, $sql);
-        echo "Form data saved successfully!";
+        echo "Cuenta creada correctamente!";
         header("Refresh: 2; url=index.html");
         exit();
     }

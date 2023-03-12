@@ -56,8 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . mysqli_error($conn);
     } else {
 	mysqli_query($conn, $sql);
-        echo "Form data saved successfully!";
-        header("Refresh: 3; url=login.html");
+        echo "Formulario de amigo enviado, recibira una respuesta oficial en un palazo de 5 dias laborables";
+        header("Refresh: 5; url=login.html");
     }
 }
 
