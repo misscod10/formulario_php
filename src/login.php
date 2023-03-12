@@ -15,12 +15,11 @@ if (!$conn) {
 
 // Comprobar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = $_POST["nom"];
-    $correu = $_POST["correu"];
+    $correu = $_POST["mail"];
     $passwd = $_POST["passwd"];
 
     // Comprobar si las credenciales son válidas
-    $sql = "SELECT * FROM login_data WHERE nom = '$nom' AND correu = '$correu' AND passwd = '$passwd'";
+    $sql = "SELECT * FROM login_data WHERE correu = '$correu' AND passwd = '$passwd'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
