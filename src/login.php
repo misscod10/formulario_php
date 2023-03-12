@@ -38,5 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 mysqli_close($conn);
-
+session_start();
+    $_SESSION['nom'] = $nom ; 
+    $_SESSION['correu'] = $correu;
 ?>

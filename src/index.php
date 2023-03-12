@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php session_start();
+
+ $correu = $_SESSION['correu'];
+ $nom = $_SESSION['nom'];
+
+?>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
