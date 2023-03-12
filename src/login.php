@@ -28,6 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Las credenciales son válidas, redirigir a index.html
         echo "Inicio de sessión correcto, por favor espere";
         header("Refresh: 3; url=index.html");
+        mysqli_close($conn);
+        session_start();
+        $_SESSION['nom'] = $nom ; 
+        $_SESSION['correu'] = $correu;
         exit();
     } else {
         // Las credenciales son incorrectas, mostrar mensaje y redirigir al formulario
@@ -36,9 +40,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-
-mysqli_close($conn);
-session_start();
-    $_SESSION['nom'] = $nom ; 
-    $_SESSION['correu'] = $correu;
 ?>
