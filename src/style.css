@@ -9,7 +9,11 @@ header {
   text-align: center;
   padding: 20px;
 }
-
+nav {
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+}
 nav ul {
   list-style: none;
   margin: 0;
@@ -92,10 +96,12 @@ footer {
 
 #user-preview {
   position: absolute;
-  top: 20px;
-  right: 20px;
   background-color: #fff;
   border: 1px solid #ccc;
   padding: 10px;
   color: #333;
+  height: 50px;
+  top: 0;
+  right: 0;
+  z-index: 999;
 }
