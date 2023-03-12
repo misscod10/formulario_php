@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM login_data WHERE correu = '$correu' AND passwd = '$passwd'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
-    $nom = $row['name'];
-    $correu = $row['email'];
+    $nom = $row['nom'];
+    $correu = $row['correu'];
     if (mysqli_num_rows($result) > 0) {
         // Las credenciales son válidas, redirigir a index.html
         echo "Inicio de sessión correcto, por favor espere";
