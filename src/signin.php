@@ -15,6 +15,7 @@ if (!$conn) {
 
 // Create table if it doesn't exist
 $sql = "CREATE TABLE IF NOT EXISTS login_data (
+    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(30) NOT NULL,
     correu VARCHAR(50) NOT NULL,
     passwd VARCHAR(30) NOT NULL,
@@ -34,8 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correu = $_POST["correu"];
     $passwd = $_POST["passwd"];
 
-    $sql = "INSERT INTO form_data (nom, correu, passwd)
-    VALUES ('$nom', '$correu', '$passwd')";
+    $sql = "INSERT INTO form_data (nom, correu, passwd) VALUES ('$nom', '$correu', '$passwd')";
 
     if (!mysqli_query($conn, $sql)) {
         echo "Error: " . mysqli_error($conn);
