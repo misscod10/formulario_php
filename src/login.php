@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($result) > 0) {
         // Las credenciales son válidas, redirigir a index.html
         echo "Inicio de sessión correcto, por favor espere";
-        header("Refresh: 3; url=index.html");
+        header("Refresh: 3; url=index.php");
         mysqli_close($conn);
         session_start();
         $_SESSION['nom'] = $nom ; 
