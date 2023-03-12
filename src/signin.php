@@ -42,6 +42,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
 	mysqli_query($conn, $sql);
         echo "Form data saved successfully!";
+        header("Location: index.html");
+        exit();
     }
 }
 
