@@ -23,27 +23,33 @@ $sql = "CREATE TABLE IF NOT EXISTS login_data (
 
 if (!mysqli_query($conn, $sql)) {
     echo "Error creating table: " . mysqli_error($conn);
-}
-
-else {
+} else {
 	mysqli_query($conn, $sql);
 }
 
-// Insert form data into table
+// Insert form data into table if it doesn't already exist
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = $_POST["nom"];
     $correu = $_POST["correu"];
     $passwd = $_POST["passwd"];
 
-    $sql = "INSERT INTO login_data (nom, correu, passwd) VALUES ('$nom', '$correu', '$passwd')";
+    $sql = "SELECT * FROM login_data WHERE nom='$nom' AND correu='$correu'";
+    $result = mysqli_query($conn, $sql);
 
-    if (!mysqli_query($conn, $sql)) {
-        echo "Error: " . mysqli_error($conn);
-    } else {
-	mysqli_query($conn, $sql);
-        echo "Cuenta creada correctamente!";
-        header("Refresh: 2; url=index.html");
+    if (mysqli_num_rows($result) > 0) {
+        echo "Cuenta ya creada, intente de nuevo.";
+        header("Refresh: 3; url=formulario.html");
         exit();
+    } else {
+        $sql = "INSERT INTO login_data (nom, correu, passwd) VALUES ('$nom', '$correu', '$passwd')";
+
+        if (!mysqli_query($conn, $sql)) {
+            echo "Error: " . mysqli_error($conn);
+        } else {
+            echo "Cuenta creada correctamente!";
+            header("Refresh: 3; url=index.html");
+            exit();
+        }
     }
 }
 
