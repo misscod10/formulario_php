@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correu = $_POST["correu"];
     $passwd = $_POST["passwd"];
 
-    $sql = "INSERT INTO form_data (nom, correu, url, data_hora, mes, setmana, numero, telefon, cerca, color)
+    $sql = "INSERT INTO form_data (nom, correu, passwd)
     VALUES ('$nom', '$correu', '$passwd')";
 
     if (!mysqli_query($conn, $sql)) {
