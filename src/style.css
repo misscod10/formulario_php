@@ -90,3 +90,11 @@ footer {
   background-color: #45a049;
 }
 
+#user-preview {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
