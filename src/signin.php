@@ -37,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
-        echo "Cuenta ya creada, intente de nuevo.";
-        header("Refresh: 3; url=formulario.html");
+        echo "Cuenta ya creada, inicie sessión con su cuenta.";
+        header("Refresh: 3; url=login.html");
         exit();
     } else {
         $sql = "INSERT INTO login_data (nom, correu, passwd) VALUES ('$nom', '$correu', '$passwd')";
