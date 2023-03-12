@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correu = $_POST["correu"];
     $passwd = $_POST["passwd"];
 
-    $sql = "INSERT INTO form_data (nom, correu, passwd) VALUES ('$nom', '$correu', '$passwd')";
+    $sql = "INSERT INTO login_data (nom, correu, passwd) VALUES ('$nom', '$correu', '$passwd')";
 
     if (!mysqli_query($conn, $sql)) {
         echo "Error: " . mysqli_error($conn);
