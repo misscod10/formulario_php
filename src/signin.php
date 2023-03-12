@@ -18,7 +18,7 @@ $sql = "CREATE TABLE IF NOT EXISTS login_data (
     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(30) NOT NULL,
     correu VARCHAR(50) NOT NULL,
-    passwd VARCHAR(30) NOT NULL,
+    passwd VARCHAR(30) NOT NULL
 )";
 
 if (!mysqli_query($conn, $sql)) {
