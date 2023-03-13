@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Error: " . mysqli_error($conn);
         } else {
             echo "Cuenta creada correctamente!";
-            header("Refresh: 3; url=index.html");
+            header("Refresh: 3; url=index.php");
             exit();
         }
     }
