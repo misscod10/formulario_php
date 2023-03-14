@@ -37,8 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
-        echo "Cuenta ya creada, inicie sessión con su cuenta.";
         header("Refresh: 3; url=login.html");
+        echo "Cuenta ya creada, inicie sessión con su cuenta.";
         exit();
     } else {
         $sql = "INSERT INTO login_data (nom, correu, passwd) VALUES ('$nom', '$correu', '$passwd')";
@@ -46,8 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!mysqli_query($conn, $sql)) {
             echo "Error: " . mysqli_error($conn);
         } else {
+            header("Refresh: 3; url=logeado.php");
             echo "Cuenta creada correctamente!";
-            header("Refresh: 3; url=index.php");
             exit();
         }
     }

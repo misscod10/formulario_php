@@ -1,15 +1,15 @@
-<!DOCTYPE html>
 <?php session_start();
 
  $correu = $_SESSION['correu'];
  $nom = $_SESSION['nom'];
 
 ?>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>My Friend Subscription</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
   </head>
   <body>
     <header>
