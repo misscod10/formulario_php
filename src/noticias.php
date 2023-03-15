@@ -1,14 +1,7 @@
 <?php session_start();
 
-//$correu = $_SESSION['correu'];
-//$nom = $_SESSION['nom'];
-//$apiKey = '51f1e9c7761c4ccfb95aadfd5e04041a';
-//$newsUrl = 'https://newsapi.org/v2/top-headlines?country=us&apiKey='.$apiKey;
-//$newsJson = file_get_contents($newsUrl);
-//$newsArray = json_decode($newsJson, true);
-//$articles = $newsArray['articles'];
-
-///Arreglar abajo
+ $correu = $_SESSION['correu'];
+ $nom = $_SESSION['nom'];
 
 $apiKey = '51f1e9c7761c4ccfb95aadfd5e04041a';
 $country = 'us';
@@ -45,11 +38,12 @@ if ($newsJson === false) {
       <h1>Noticias recientes</h1>
       <nav>
         <ul>
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="logeado.php">Home</a></li>
+          <li><a href="logeado.php#about">About</a></li>
           <li><a href="./form.html">Contact</a></li>
           <li><a href="./login.html">Log in</a></li>
           <li><a href="./registre.html">Create Account</a></li>
+          <li><a href="noticias.php">Recent News</a></li>
         </ul>
       </nav>
     </header>
