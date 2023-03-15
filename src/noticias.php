@@ -42,7 +42,7 @@ if ($newsJson === false) {
         <p>Bienvenido, <?php echo $nom; ?></p>
         <p><?php echo $correu; ?></p>
       </div>       
-      <h1>Welcome to My <br>Friend Subscription Application</h1>
+      <h1>Noticias recientes</h1>
       <nav>
         <ul>
           <li><a href="./index.html">Home</a></li>
@@ -53,15 +53,17 @@ if ($newsJson === false) {
         </ul>
       </nav>
     </header>
-	<h1>Noticias recientes</h1>
+	
+  <main>
 	<?php 
    foreach ($articles as $article) : 
   ?>
-		<div>
+		<section>
 			<h2><?php echo $article['title']; ?></h2>
 			<p><?php echo $article['description']; ?></p>
 			<a href="<?php echo $article['url']; ?>" target="_blank">Leer más</a>
-		</div>
-	<?php endforeach; ?>
+   </section>
+  <?php endforeach; ?>
+   </main>
 </body>
 </html>
