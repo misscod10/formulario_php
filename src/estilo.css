@@ -105,3 +105,12 @@ footer {
   right: 10px;
   z-index: 999;
 }
+.login-reminder {
+  display: none;
+  color: red;
+  font-weight: bold;
+}
+
+li:hover .login-reminder {
+  display: inline;
+}
