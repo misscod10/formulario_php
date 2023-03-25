@@ -1,7 +1,7 @@
 <?php
 
 // Connect to MySQL database
-$servername = "localhost";
+$servername = "db";
 $username = "user1";
 $password = "MaNF48Fc";
 $dbname = "php";
@@ -20,8 +20,8 @@ $sql = "CREATE TABLE IF NOT EXISTS form_data (
     correu VARCHAR(50) NOT NULL,
     url VARCHAR(50),
     data_hora DATETIME,
-    mes DATE,
-    setmana DATE,
+    mes VARCHAR(20),
+    setmana VARCHAR(20),
     numero INT(2),
     telefon VARCHAR(15),
     cerca VARCHAR(30),
@@ -56,8 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . mysqli_error($conn);
     } else {
 	mysqli_query($conn, $sql);
+        header("Refresh: 5; url=index.html");
         echo "Formulario de amigo enviado, recibira una respuesta oficial en un palazo de 5 dias laborables";
-        header("Refresh: 5; url=login.html");
     }
 }
 
